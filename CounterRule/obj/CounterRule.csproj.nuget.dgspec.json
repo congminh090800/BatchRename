@@ -1,25 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\source\\repos\\BatchRename\\CounterRule\\CounterRule.csproj": {}
+    "D:\\BatchRename\\CounterRule\\CounterRule.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\source\\repos\\BatchRename\\CounterRule\\CounterRule.csproj": {
+    "D:\\BatchRename\\CounterRule\\CounterRule.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\BatchRename\\CounterRule\\CounterRule.csproj",
+        "projectUniqueName": "D:\\BatchRename\\CounterRule\\CounterRule.csproj",
         "projectName": "CounterRule",
-        "projectPath": "C:\\Users\\Admin\\source\\repos\\BatchRename\\CounterRule\\CounterRule.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\source\\repos\\BatchRename\\CounterRule\\obj\\",
+        "projectPath": "D:\\BatchRename\\CounterRule\\CounterRule.csproj",
+        "packagesPath": "C:\\Users\\dainghia\\.nuget\\packages\\",
+        "outputPath": "D:\\BatchRename\\CounterRule\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\dainghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -33,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\source\\repos\\BatchRename\\RenameLib\\RenameLib.csproj": {
-                "projectPath": "C:\\Users\\Admin\\source\\repos\\BatchRename\\RenameLib\\RenameLib.csproj"
+              "D:\\BatchRename\\RenameLib\\RenameLib.csproj": {
+                "projectPath": "D:\\BatchRename\\RenameLib\\RenameLib.csproj"
               }
             }
           }
@@ -63,26 +58,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Admin\\source\\repos\\BatchRename\\RenameLib\\RenameLib.csproj": {
+    "D:\\BatchRename\\RenameLib\\RenameLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\BatchRename\\RenameLib\\RenameLib.csproj",
+        "projectUniqueName": "D:\\BatchRename\\RenameLib\\RenameLib.csproj",
         "projectName": "RenameLib",
-        "projectPath": "C:\\Users\\Admin\\source\\repos\\BatchRename\\RenameLib\\RenameLib.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\source\\repos\\BatchRename\\RenameLib\\obj\\",
+        "projectPath": "D:\\BatchRename\\RenameLib\\RenameLib.csproj",
+        "packagesPath": "C:\\Users\\dainghia\\.nuget\\packages\\",
+        "outputPath": "D:\\BatchRename\\RenameLib\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\dainghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -122,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

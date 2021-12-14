@@ -13,17 +13,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenameLib", "RenameLib\Rena
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrimRule", "TrimRule\TrimRule.csproj", "{41FC285B-57E1-4398-B47B-303106FCFCFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CounterRule", "CounterRule\CounterRule.csproj", "{2B99FF2C-735C-4D33-8D1F-957F517B357B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CounterRule", "CounterRule\CounterRule.csproj", "{2B99FF2C-735C-4D33-8D1F-957F517B357B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReplaceRule", "ReplaceRule\ReplaceRule.csproj", "{863FF7E6-69B8-41EF-839F-FD1E071EDA54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReplaceRule", "ReplaceRule\ReplaceRule.csproj", "{863FF7E6-69B8-41EF-839F-FD1E071EDA54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrefixRule", "PrefixRule\PrefixRule.csproj", "{0E2E000F-6144-48A4-8D85-4AECF5129E67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrefixRule", "PrefixRule\PrefixRule.csproj", "{0E2E000F-6144-48A4-8D85-4AECF5129E67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuffixRule", "SuffixRule\SuffixRule.csproj", "{BF6095CB-8D25-429F-825E-948225C55631}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuffixRule", "SuffixRule\SuffixRule.csproj", "{BF6095CB-8D25-429F-825E-948225C55631}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LowerCaseAndNoSpaceRule", "LowerCaseAndNoSpaceRule\LowerCaseAndNoSpaceRule.csproj", "{C1B23B81-3681-4DBA-AEEC-6F8BDB0DCC71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LowerCaseAndNoSpaceRule", "LowerCaseAndNoSpaceRule\LowerCaseAndNoSpaceRule.csproj", "{C1B23B81-3681-4DBA-AEEC-6F8BDB0DCC71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PascalCaseRule", "PascalCaseRule\PascalCaseRule.csproj", "{C4BB254F-037A-4E43-BD00-66208DC5899E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PascalCaseRule", "PascalCaseRule\PascalCaseRule.csproj", "{C4BB254F-037A-4E43-BD00-66208DC5899E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchRename", "BatchRename\BatchRename.csproj", "{C352D555-9088-4DE8-A7CB-D398764B034F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -155,6 +157,18 @@ Global
 		{C4BB254F-037A-4E43-BD00-66208DC5899E}.Release|x64.Build.0 = Release|Any CPU
 		{C4BB254F-037A-4E43-BD00-66208DC5899E}.Release|x86.ActiveCfg = Release|Any CPU
 		{C4BB254F-037A-4E43-BD00-66208DC5899E}.Release|x86.Build.0 = Release|Any CPU
+		{C352D555-9088-4DE8-A7CB-D398764B034F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C352D555-9088-4DE8-A7CB-D398764B034F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C352D555-9088-4DE8-A7CB-D398764B034F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C352D555-9088-4DE8-A7CB-D398764B034F}.Debug|x64.Build.0 = Debug|Any CPU
+		{C352D555-9088-4DE8-A7CB-D398764B034F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C352D555-9088-4DE8-A7CB-D398764B034F}.Debug|x86.Build.0 = Debug|Any CPU
+		{C352D555-9088-4DE8-A7CB-D398764B034F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C352D555-9088-4DE8-A7CB-D398764B034F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C352D555-9088-4DE8-A7CB-D398764B034F}.Release|x64.ActiveCfg = Release|Any CPU
+		{C352D555-9088-4DE8-A7CB-D398764B034F}.Release|x64.Build.0 = Release|Any CPU
+		{C352D555-9088-4DE8-A7CB-D398764B034F}.Release|x86.ActiveCfg = Release|Any CPU
+		{C352D555-9088-4DE8-A7CB-D398764B034F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
