@@ -31,7 +31,30 @@ namespace BatchRename
 
         static string ToUpperFirstLetter(string input)
         {
-            return input;
+            StringBuilder result = new StringBuilder(input);
+
+            if (result[0] >= 'a' && result[0] <= 'z')
+            {
+                result[0] = (char)('A' + (input[0] - 'a'));
+            }
+
+            for (int i = 1; i < input.Length; i++)
+            {
+
+                //if this is the first letter in the word
+                if (input[i] >= 'a' && input[i] <= 'z' && input[i - 1] == ' ')
+                {
+                    result[i] = (char)('A' + (input[i] - 'a'));
+                    continue;
+                }
+
+                //if this is a letter in the word
+                if (input[i] >= 'A' && input[i] <= 'Z' && Char.IsLetter(input[i-1]))
+                {
+                    result[i] = (char)('a' + (input[i] - 'A'));
+                }
+            }
+            return result.ToString();
         }
 
         public override void OpenDialog()
