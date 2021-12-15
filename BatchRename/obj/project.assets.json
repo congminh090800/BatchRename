@@ -1,0 +1,269 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0-windows7.0": {
+      "ChangeExtensionRule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ChangeExtensionRule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ChangeExtensionRule.dll": {}
+        }
+      },
+      "CounterRule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CounterRule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CounterRule.dll": {}
+        }
+      },
+      "LowerCaseAndNoSpaceRule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LowerCaseAndNoSpaceRule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LowerCaseAndNoSpaceRule.dll": {}
+        }
+      },
+      "PascalCaseRule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PascalCaseRule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PascalCaseRule.dll": {}
+        }
+      },
+      "PrefixRule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PrefixRule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PrefixRule.dll": {}
+        }
+      },
+      "RenameLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/RenameLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RenameLib.dll": {}
+        }
+      },
+      "ReplaceRule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ReplaceRule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReplaceRule.dll": {}
+        }
+      },
+      "SuffixRule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SuffixRule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SuffixRule.dll": {}
+        }
+      },
+      "TrimRule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TrimRule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TrimRule.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ChangeExtensionRule/1.0.0": {
+      "type": "project",
+      "path": "../ChangeExtensionRule/ChangeExtensionRule.csproj",
+      "msbuildProject": "../ChangeExtensionRule/ChangeExtensionRule.csproj"
+    },
+    "CounterRule/1.0.0": {
+      "type": "project",
+      "path": "../CounterRule/CounterRule.csproj",
+      "msbuildProject": "../CounterRule/CounterRule.csproj"
+    },
+    "LowerCaseAndNoSpaceRule/1.0.0": {
+      "type": "project",
+      "path": "../LowerCaseAndNoSpaceRule/LowerCaseAndNoSpaceRule.csproj",
+      "msbuildProject": "../LowerCaseAndNoSpaceRule/LowerCaseAndNoSpaceRule.csproj"
+    },
+    "PascalCaseRule/1.0.0": {
+      "type": "project",
+      "path": "../PascalCaseRule/PascalCaseRule.csproj",
+      "msbuildProject": "../PascalCaseRule/PascalCaseRule.csproj"
+    },
+    "PrefixRule/1.0.0": {
+      "type": "project",
+      "path": "../PrefixRule/PrefixRule.csproj",
+      "msbuildProject": "../PrefixRule/PrefixRule.csproj"
+    },
+    "RenameLib/1.0.0": {
+      "type": "project",
+      "path": "../RenameLib/RenameLib.csproj",
+      "msbuildProject": "../RenameLib/RenameLib.csproj"
+    },
+    "ReplaceRule/1.0.0": {
+      "type": "project",
+      "path": "../ReplaceRule/ReplaceRule.csproj",
+      "msbuildProject": "../ReplaceRule/ReplaceRule.csproj"
+    },
+    "SuffixRule/1.0.0": {
+      "type": "project",
+      "path": "../SuffixRule/SuffixRule.csproj",
+      "msbuildProject": "../SuffixRule/SuffixRule.csproj"
+    },
+    "TrimRule/1.0.0": {
+      "type": "project",
+      "path": "../TrimRule/TrimRule.csproj",
+      "msbuildProject": "../TrimRule/TrimRule.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0-windows7.0": [
+      "ChangeExtensionRule >= 1.0.0",
+      "CounterRule >= 1.0.0",
+      "LowerCaseAndNoSpaceRule >= 1.0.0",
+      "PascalCaseRule >= 1.0.0",
+      "PrefixRule >= 1.0.0",
+      "RenameLib >= 1.0.0",
+      "ReplaceRule >= 1.0.0",
+      "SuffixRule >= 1.0.0",
+      "TrimRule >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\dainghia\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\BatchRename\\BatchRename\\BatchRename.csproj",
+      "projectName": "BatchRename",
+      "projectPath": "D:\\BatchRename\\BatchRename\\BatchRename.csproj",
+      "packagesPath": "C:\\Users\\dainghia\\.nuget\\packages\\",
+      "outputPath": "D:\\BatchRename\\BatchRename\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\dainghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0-windows7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "projectReferences": {
+            "D:\\BatchRename\\ChangeExtensionRule\\ChangeExtensionRule.csproj": {
+              "projectPath": "D:\\BatchRename\\ChangeExtensionRule\\ChangeExtensionRule.csproj"
+            },
+            "D:\\BatchRename\\CounterRule\\CounterRule.csproj": {
+              "projectPath": "D:\\BatchRename\\CounterRule\\CounterRule.csproj"
+            },
+            "D:\\BatchRename\\LowerCaseAndNoSpaceRule\\LowerCaseAndNoSpaceRule.csproj": {
+              "projectPath": "D:\\BatchRename\\LowerCaseAndNoSpaceRule\\LowerCaseAndNoSpaceRule.csproj"
+            },
+            "D:\\BatchRename\\PascalCaseRule\\PascalCaseRule.csproj": {
+              "projectPath": "D:\\BatchRename\\PascalCaseRule\\PascalCaseRule.csproj"
+            },
+            "D:\\BatchRename\\PrefixRule\\PrefixRule.csproj": {
+              "projectPath": "D:\\BatchRename\\PrefixRule\\PrefixRule.csproj"
+            },
+            "D:\\BatchRename\\RenameLib\\RenameLib.csproj": {
+              "projectPath": "D:\\BatchRename\\RenameLib\\RenameLib.csproj"
+            },
+            "D:\\BatchRename\\ReplaceRule\\ReplaceRule.csproj": {
+              "projectPath": "D:\\BatchRename\\ReplaceRule\\ReplaceRule.csproj"
+            },
+            "D:\\BatchRename\\SuffixRule\\SuffixRule.csproj": {
+              "projectPath": "D:\\BatchRename\\SuffixRule\\SuffixRule.csproj"
+            },
+            "D:\\BatchRename\\TrimRule\\TrimRule.csproj": {
+              "projectPath": "D:\\BatchRename\\TrimRule\\TrimRule.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0-windows7.0": {
+        "targetAlias": "net5.0-windows",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

@@ -219,7 +219,7 @@
                                         RenderOptions.BitmapScalingMode="HighQuality"/>
                             <TextBlock Text="Add Method" VerticalAlignment="Center" Margin="0,0,10,0"/>
                         </StackPanel>
-                        
+
                         <Button.ContextMenu>
                             <ContextMenu HorizontalAlignment="Center">
                                 <ContextMenu.ItemContainerStyle>
@@ -235,7 +235,7 @@
                                 </ContextMenu.ItemTemplate>
                             </ContextMenu>
                         </Button.ContextMenu>
-                        
+
                     </Button>
 
                     <Button Name="UpButton" Focusable="False" Style="{DynamicResource DefaultButton}" Click="DownButton_Click">

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace BatchRename
 {
     /// <summary>
-    /// Interaction logic for FinishedRenameDialog.xaml
+    /// Interaction logic for CompletedRenameDialog.xaml
     /// </summary>
-    public partial class FinishedRenameDialog : Window
+    public partial class CompletedRenameDialog : Window
     {
-        public FinishedRenameDialog()
+        public CompletedRenameDialog()
         {
             InitializeComponent();
         }
