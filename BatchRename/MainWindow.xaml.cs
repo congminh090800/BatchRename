@@ -7,30 +7,28 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace BatchRename
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
     public partial class MainWindow : Window
     {
+        private BindingList<FileInfo> filesList;
         public List<IRule> Rules;
         public BindingList<PresetElement> CurrentPresetElements { get; set; } = new BindingList<PresetElement>();
+
+        private BackgroundWorker fetchFilesWorker;
+        private BackgroundWorker removeFilesWorker;
         public MainWindow()
         {
             DllLoader.execute();
@@ -38,6 +36,29 @@ namespace BatchRename
             InitializeComponent();
             AddMethodButton.ContextMenu.ItemsSource = Rules;
             OperationsList.ItemsSource = CurrentPresetElements;
+
+            filesList = new BindingList<FileInfo>();
+
+            fetchFilesWorker = new BackgroundWorker
+            {
+                WorkerReportsProgress = true,
+                WorkerSupportsCancellation = true
+            };
+            fetchFilesWorker.DoWork += FetchFiles_DoWork;
+            fetchFilesWorker.ProgressChanged += ProgressChanged;
+            fetchFilesWorker.RunWorkerCompleted += RunWorkerCompleted;
+
+            //Create exclude files worker to invoke on click
+            removeFilesWorker = new BackgroundWorker
+            {
+                WorkerReportsProgress = true,
+                WorkerSupportsCancellation = true,
+            };
+            removeFilesWorker.DoWork += RemoveFiles_DoWork;
+            removeFilesWorker.ProgressChanged += ProgressChanged;
+            removeFilesWorker.RunWorkerCompleted += RunWorkerCompleted;
+
+            RenameFilesList.ItemsSource = filesList;
         }
 
         private void DisableLoadingViews()
@@ -72,14 +93,63 @@ namespace BatchRename
 
         private void FetchFiles_DoWork(object sender, DoWorkEventArgs e)
         {
+            string path = (string)e.Argument + "\\";
+            var children = Directory.GetFiles(path);
+            StringBuilder output = new StringBuilder();
 
+            for (int child = 0; child < children.Length; child++)
+            {
+                bool isDuplicated = false;
+                string childName = children[child].Remove(0, path.Length);
+
+                //Check duplicates
+                for (int i = 0; i < filesList.Count; i++)
+                {
+                    if (filesList[i].Name.Equals(childName) && filesList[i].FullName.Equals(path))
+                    {
+                        isDuplicated = true;
+                        break;
+                    }
+                }
+
+                output.Clear();
+                string result = "Skip duplicate ";
+                if (!isDuplicated)
+                {
+                    result = "Add ";
+                    Dispatcher.Invoke(() =>
+                    {
+                        FileInfo file = new FileInfo(children[child]);
+                        filesList.Add(file);
+                    });
+                }
+                output.Append(result);
+                output.Append(path);
+                output.Append(childName);
+
+                fetchFilesWorker.ReportProgress(child * 100 / children.Length, output.ToString());
+            }
         }
 
-        private void ExcludeFiles_DoWork(object sender, DoWorkEventArgs e)
+        private void RemoveFiles_DoWork(object sender, DoWorkEventArgs e)
         {
+            var items = ((IList<object>)e.Argument).Cast<FileInfo>().ToList();
 
+            int amount = items.Count;
+
+            StringBuilder output = new StringBuilder();
+
+            for (int item = 0; item < amount; item++)
+            {
+                Dispatcher.Invoke(() => {
+                    filesList.Remove(items[item]);
+                });
+                output.Clear();
+                output.Append("Remove ");
+                output.Append(items[item].FullName + items[item].Name);
+                removeFilesWorker.ReportProgress(item * 100 / amount, output.ToString());
+            }
         }
-
 
         private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
@@ -111,7 +181,7 @@ namespace BatchRename
 
         private void OpenButton_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
             openFileDialog.Title = "Load preset";
             openFileDialog.DefaultExt = "json";
             openFileDialog.Filter = "Json files (*.json)|*.json";
@@ -130,7 +200,7 @@ namespace BatchRename
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            Microsoft.Win32.SaveFileDialog saveFileDialog = new Microsoft.Win32.SaveFileDialog();
             //saveFileDialog.InitialDirectory = @"C:\";
             saveFileDialog.Filter = "Json files (*.json)|*.json";
             saveFileDialog.Title = "Save preset";
@@ -147,18 +217,18 @@ namespace BatchRename
 
         private void AddFileButton_Click(object sender, RoutedEventArgs e)
         {
-            //if (fetchFilesWorker.IsBusy || excludeFilesWorker.IsBusy) return;
-            //var dialog = new FolderBrowserDialog();
+            if (fetchFilesWorker.IsBusy || removeFilesWorker.IsBusy) return;
+            var dialog = new FolderBrowserDialog();
 
-            //if (dialog.ShowDialog() == DialogResult.OK)
-            //{
-            //    Mouse.OverrideCursor = System.Windows.Input.Cursors.Wait;
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Mouse.OverrideCursor = System.Windows.Input.Cursors.Wait;
 
-            //    DisableLoadingViews();
-            //    LoadingBar.Value = 0;
-            //    fetchFilesWorker.RunWorkerAsync(dialog.SelectedPath);
-            //}
-
+                DisableLoadingViews();
+                LoadingBar.Value = 0;
+                Debug.WriteLine("path: " + dialog.SelectedPath);
+                fetchFilesWorker.RunWorkerAsync(dialog.SelectedPath);
+            }
         }
 
         private void ExcludeFileButton_Click(object sender, RoutedEventArgs e)

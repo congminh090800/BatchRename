@@ -353,10 +353,8 @@
                               ItemContainerStyle="{StaticResource ListViewItemStyle}" Padding="10,2">
                         <ListView.View>
                             <GridView ColumnHeaderContainerStyle="{StaticResource ListViewHeaderStyle}" AllowsColumnReorder="False">
-                                <GridViewColumn Header="Filename" Width="120" DisplayMemberBinding= "{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
-                                <GridViewColumn Header="New Filename" Width="120" DisplayMemberBinding= "{Binding NewName, UpdateSourceTrigger=PropertyChanged}"/>
-                                <GridViewColumn Header="Path" Width="155" DisplayMemberBinding= "{Binding Path, UpdateSourceTrigger=PropertyChanged}"/>
-                                <GridViewColumn Header="Error" Width="150" DisplayMemberBinding= "{Binding Error, UpdateSourceTrigger=PropertyChanged}"/>
+                                <GridViewColumn Header="Filename" Width="200" DisplayMemberBinding= "{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+                                <GridViewColumn Header="Path" Width="300" DisplayMemberBinding= "{Binding FullName, UpdateSourceTrigger=PropertyChanged}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
