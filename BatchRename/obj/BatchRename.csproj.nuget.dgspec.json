@@ -10,11 +10,16 @@
         "projectUniqueName": "D:\\BatchRename\\BatchRename\\BatchRename.csproj",
         "projectName": "BatchRename",
         "projectPath": "D:\\BatchRename\\BatchRename\\BatchRename.csproj",
-        "packagesPath": "C:\\Users\\dainghia\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "D:\\BatchRename\\BatchRename\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\dainghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,32 +33,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "D:\\BatchRename\\ChangeExtensionRule\\ChangeExtensionRule.csproj": {
-                "projectPath": "D:\\BatchRename\\ChangeExtensionRule\\ChangeExtensionRule.csproj"
-              },
-              "D:\\BatchRename\\CounterRule\\CounterRule.csproj": {
-                "projectPath": "D:\\BatchRename\\CounterRule\\CounterRule.csproj"
-              },
-              "D:\\BatchRename\\LowerCaseAndNoSpaceRule\\LowerCaseAndNoSpaceRule.csproj": {
-                "projectPath": "D:\\BatchRename\\LowerCaseAndNoSpaceRule\\LowerCaseAndNoSpaceRule.csproj"
-              },
-              "D:\\BatchRename\\PascalCaseRule\\PascalCaseRule.csproj": {
-                "projectPath": "D:\\BatchRename\\PascalCaseRule\\PascalCaseRule.csproj"
-              },
-              "D:\\BatchRename\\PrefixRule\\PrefixRule.csproj": {
-                "projectPath": "D:\\BatchRename\\PrefixRule\\PrefixRule.csproj"
-              },
               "D:\\BatchRename\\RenameLib\\RenameLib.csproj": {
                 "projectPath": "D:\\BatchRename\\RenameLib\\RenameLib.csproj"
-              },
-              "D:\\BatchRename\\ReplaceRule\\ReplaceRule.csproj": {
-                "projectPath": "D:\\BatchRename\\ReplaceRule\\ReplaceRule.csproj"
-              },
-              "D:\\BatchRename\\SuffixRule\\SuffixRule.csproj": {
-                "projectPath": "D:\\BatchRename\\SuffixRule\\SuffixRule.csproj"
-              },
-              "D:\\BatchRename\\TrimRule\\TrimRule.csproj": {
-                "projectPath": "D:\\BatchRename\\TrimRule\\TrimRule.csproj"
               }
             }
           }
@@ -67,6 +48,12 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "PropertyChanged.Fody": {
+              "target": "Package",
+              "version": "[3.4.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -85,297 +72,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\BatchRename\\ChangeExtensionRule\\ChangeExtensionRule.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\BatchRename\\ChangeExtensionRule\\ChangeExtensionRule.csproj",
-        "projectName": "ChangeExtensionRule",
-        "projectPath": "D:\\BatchRename\\ChangeExtensionRule\\ChangeExtensionRule.csproj",
-        "packagesPath": "C:\\Users\\dainghia\\.nuget\\packages\\",
-        "outputPath": "D:\\BatchRename\\ChangeExtensionRule\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\dainghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {
-              "D:\\BatchRename\\RenameLib\\RenameLib.csproj": {
-                "projectPath": "D:\\BatchRename\\RenameLib\\RenameLib.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\BatchRename\\CounterRule\\CounterRule.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\BatchRename\\CounterRule\\CounterRule.csproj",
-        "projectName": "CounterRule",
-        "projectPath": "D:\\BatchRename\\CounterRule\\CounterRule.csproj",
-        "packagesPath": "C:\\Users\\dainghia\\.nuget\\packages\\",
-        "outputPath": "D:\\BatchRename\\CounterRule\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\dainghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {
-              "D:\\BatchRename\\RenameLib\\RenameLib.csproj": {
-                "projectPath": "D:\\BatchRename\\RenameLib\\RenameLib.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\BatchRename\\LowerCaseAndNoSpaceRule\\LowerCaseAndNoSpaceRule.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\BatchRename\\LowerCaseAndNoSpaceRule\\LowerCaseAndNoSpaceRule.csproj",
-        "projectName": "LowerCaseAndNoSpaceRule",
-        "projectPath": "D:\\BatchRename\\LowerCaseAndNoSpaceRule\\LowerCaseAndNoSpaceRule.csproj",
-        "packagesPath": "C:\\Users\\dainghia\\.nuget\\packages\\",
-        "outputPath": "D:\\BatchRename\\LowerCaseAndNoSpaceRule\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\dainghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {
-              "D:\\BatchRename\\RenameLib\\RenameLib.csproj": {
-                "projectPath": "D:\\BatchRename\\RenameLib\\RenameLib.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\BatchRename\\PascalCaseRule\\PascalCaseRule.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\BatchRename\\PascalCaseRule\\PascalCaseRule.csproj",
-        "projectName": "PascalCaseRule",
-        "projectPath": "D:\\BatchRename\\PascalCaseRule\\PascalCaseRule.csproj",
-        "packagesPath": "C:\\Users\\dainghia\\.nuget\\packages\\",
-        "outputPath": "D:\\BatchRename\\PascalCaseRule\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\dainghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {
-              "D:\\BatchRename\\RenameLib\\RenameLib.csproj": {
-                "projectPath": "D:\\BatchRename\\RenameLib\\RenameLib.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\BatchRename\\PrefixRule\\PrefixRule.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\BatchRename\\PrefixRule\\PrefixRule.csproj",
-        "projectName": "PrefixRule",
-        "projectPath": "D:\\BatchRename\\PrefixRule\\PrefixRule.csproj",
-        "packagesPath": "C:\\Users\\dainghia\\.nuget\\packages\\",
-        "outputPath": "D:\\BatchRename\\PrefixRule\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\dainghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {
-              "D:\\BatchRename\\RenameLib\\RenameLib.csproj": {
-                "projectPath": "D:\\BatchRename\\RenameLib\\RenameLib.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -385,11 +82,16 @@
         "projectUniqueName": "D:\\BatchRename\\RenameLib\\RenameLib.csproj",
         "projectName": "RenameLib",
         "projectPath": "D:\\BatchRename\\RenameLib\\RenameLib.csproj",
-        "packagesPath": "C:\\Users\\dainghia\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "D:\\BatchRename\\RenameLib\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\dainghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -414,6 +116,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -429,181 +137,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\BatchRename\\ReplaceRule\\ReplaceRule.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\BatchRename\\ReplaceRule\\ReplaceRule.csproj",
-        "projectName": "ReplaceRule",
-        "projectPath": "D:\\BatchRename\\ReplaceRule\\ReplaceRule.csproj",
-        "packagesPath": "C:\\Users\\dainghia\\.nuget\\packages\\",
-        "outputPath": "D:\\BatchRename\\ReplaceRule\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\dainghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {
-              "D:\\BatchRename\\RenameLib\\RenameLib.csproj": {
-                "projectPath": "D:\\BatchRename\\RenameLib\\RenameLib.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\BatchRename\\SuffixRule\\SuffixRule.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\BatchRename\\SuffixRule\\SuffixRule.csproj",
-        "projectName": "SuffixRule",
-        "projectPath": "D:\\BatchRename\\SuffixRule\\SuffixRule.csproj",
-        "packagesPath": "C:\\Users\\dainghia\\.nuget\\packages\\",
-        "outputPath": "D:\\BatchRename\\SuffixRule\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\dainghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {
-              "D:\\BatchRename\\RenameLib\\RenameLib.csproj": {
-                "projectPath": "D:\\BatchRename\\RenameLib\\RenameLib.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\BatchRename\\TrimRule\\TrimRule.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\BatchRename\\TrimRule\\TrimRule.csproj",
-        "projectName": "TrimRule",
-        "projectPath": "D:\\BatchRename\\TrimRule\\TrimRule.csproj",
-        "packagesPath": "C:\\Users\\dainghia\\.nuget\\packages\\",
-        "outputPath": "D:\\BatchRename\\TrimRule\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\dainghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {
-              "D:\\BatchRename\\RenameLib\\RenameLib.csproj": {
-                "projectPath": "D:\\BatchRename\\RenameLib\\RenameLib.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

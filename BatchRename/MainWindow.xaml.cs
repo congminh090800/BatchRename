@@ -1,10 +1,15 @@
 ﻿using Microsoft.Win32;
+using Newtonsoft.Json.Linq;
+using RenameLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,39 +29,15 @@ namespace BatchRename
     /// </summary>
     public partial class MainWindow : Window
     {
-        private BackgroundWorker fetchFilesWorker;
-        private BackgroundWorker excludeFilesWorker;
-
-        private BindingList<Preset> loadedPresets; //Use for back up preset loaded
-
+        public List<IRule> Rules;
+        public BindingList<PresetElement> CurrentPresetElements { get; set; } = new BindingList<PresetElement>();
         public MainWindow()
         {
+            DllLoader.execute();
+            Rules = DllLoader.Rules;
             InitializeComponent();
-
-            loadedPresets = new BindingList<Preset>();
-
-            //Bind
-            PresetsList.ItemsSource = loadedPresets;
-
-            //Create fetch files worker to invoke on click
-            fetchFilesWorker = new BackgroundWorker
-            {
-                WorkerReportsProgress = true,
-                WorkerSupportsCancellation = true
-            };
-            fetchFilesWorker.DoWork += FetchFiles_DoWork;
-            fetchFilesWorker.ProgressChanged += ProgressChanged;
-            fetchFilesWorker.RunWorkerCompleted += RunWorkerCompleted;
-
-            //Create exclude files worker to invoke on click
-            excludeFilesWorker = new BackgroundWorker
-            {
-                WorkerReportsProgress = true,
-                WorkerSupportsCancellation = true,
-            };
-            excludeFilesWorker.DoWork += ExcludeFiles_DoWork;
-            excludeFilesWorker.ProgressChanged += ProgressChanged;
-            excludeFilesWorker.RunWorkerCompleted += RunWorkerCompleted;
+            AddMethodButton.ContextMenu.ItemsSource = Rules;
+            OperationsList.ItemsSource = CurrentPresetElements;
         }
 
         private void DisableLoadingViews()
@@ -130,37 +111,38 @@ namespace BatchRename
 
         private void OpenButton_Click(object sender, RoutedEventArgs e)
         {
-            //OpenFileDialog openFileDialog = new OpenFileDialog();
-            //openFileDialog.Title = "Open";
-            //openFileDialog.DefaultExt = "txt";
-            //openFileDialog.Filter = "Text files (*.txt)|*.txt";
-            //openFileDialog.RestoreDirectory = true;
-            //if (openFileDialog.ShowDialog() == DialogResult.OK)
-            //{
-            //    var reader = new StreamReader(openFileDialog.FileName);
-            //    Preset preset = new Preset();
-            //    var tokens2 = openFileDialog.FileName.Split(new string[] { "\\" }, StringSplitOptions.None);
-            //    var tokens3 = tokens2[tokens2.Length - 1].Split(new string[] { "." }, StringSplitOptions.None);
-            //    preset.Name = tokens3[0];
-
-            //    reader.Close();
-            //}
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Load preset";
+            openFileDialog.DefaultExt = "json";
+            openFileDialog.Filter = "Json files (*.json)|*.json";
+            openFileDialog.RestoreDirectory = true;
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string jsonString = File.ReadAllText(openFileDialog.FileName);
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true,
+                };
+                CurrentPresetElements = JsonSerializer.Deserialize<BindingList<PresetElement>>(jsonString, options);
+                OperationsList.ItemsSource = CurrentPresetElements;
+            };
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            //SaveFileDialog saveFileDialog = new SaveFileDialog();
-            ////saveFileDialog.InitialDirectory = @"C:\";
-            //saveFileDialog.DefaultExt = "txt";
-            //saveFileDialog.Filter = "Text files (*.txt)|*.txt";
-            //saveFileDialog.RestoreDirectory = true;
-            //if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            //{
-            //    var writer = new StreamWriter(saveFileDialog.FileName);
-            //    writer.WriteLine("BatchRename");
-
-            //    writer.Close();
-            //}
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            //saveFileDialog.InitialDirectory = @"C:\";
+            saveFileDialog.Filter = "Json files (*.json)|*.json";
+            saveFileDialog.Title = "Save preset";
+            saveFileDialog.RestoreDirectory = true;
+            Nullable<bool> result = saveFileDialog.ShowDialog();
+            if (result == true)
+            {
+                String fileName = saveFileDialog.FileName;
+                string jsonString = JsonSerializer.Serialize(CurrentPresetElements);
+                string beautified = JToken.Parse(jsonString).ToString(Newtonsoft.Json.Formatting.Indented);
+                File.WriteAllText(fileName, beautified);
+            }
         }
 
         private void AddFileButton_Click(object sender, RoutedEventArgs e)
@@ -190,7 +172,8 @@ namespace BatchRename
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-
+            PresetElement item = ((sender as System.Windows.Controls.Button).Tag as PresetElement);
+            CurrentPresetElements.Remove(item);
         }
 
         private void RenameTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -232,6 +215,35 @@ namespace BatchRename
         private void UpButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+        }
+        private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is TextBlock)
+            {
+                TextBlock tb = e.Source as TextBlock;
+                string ruleName = tb.Text;
+                switch(ruleName)
+                {
+                    case "ChangeExtension":
+                        openChangeExtDialog();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        public void openChangeExtDialog()
+        {
+            ChangeExtensionDialog window = new ChangeExtensionDialog();
+            window.OnNewExtensionSubmit += (presetElement) =>
+            {
+                CurrentPresetElements.Add(presetElement);
+            };
+            window.Show();
         }
     }
 }

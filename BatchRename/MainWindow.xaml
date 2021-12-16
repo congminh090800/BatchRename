@@ -7,7 +7,9 @@
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
         Icon="Assets/app.png"
-        Title="Batch Rename" Height="450" Width="800" ResizeMode="NoResize">
+        Title="Batch Rename" Height="450" Width="800" ResizeMode="NoResize"
+        Loaded="Window_Loaded"
+        >
     <Window.Resources>
 
         <Style x:Key="DefaultButton" TargetType="{x:Type Button}">
@@ -187,16 +189,6 @@
     <DockPanel LastChildFill="True">
         <Border DockPanel.Dock="Top" BorderBrush="LightGray" BorderThickness="0,0,0,1">
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Height="30">
-
-                <Button Name="RefreshButton" Click="RefreshButton_Click" Focusable="False" Style="{DynamicResource DefaultButton}">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="Assets/appbar_refresh.png" 
-                                        Width="15" Height="15" Margin="5"
-                                        RenderOptions.BitmapScalingMode="HighQuality"/>
-                        <TextBlock Text="Refresh" VerticalAlignment="Center" Margin="0,0,10,0"/>
-                    </StackPanel>
-                </Button>
-
                 <Button Name="StartButton" Click="StartButton_Click" Focusable="False" Style="{DynamicResource DefaultButton}">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="Assets/appbar_start_batch.png" 
@@ -222,15 +214,15 @@
 
                         <Button.ContextMenu>
                             <ContextMenu HorizontalAlignment="Center">
-                                <ContextMenu.ItemContainerStyle>
+                                <!--<ContextMenu.ItemContainerStyle>
                                     <Style TargetType="{x:Type MenuItem}">
                                         <Setter Property="Command"  
                                        Value="{Binding CreateNewOperation}" />
                                     </Style>
-                                </ContextMenu.ItemContainerStyle>
+                                </ContextMenu.ItemContainerStyle>-->
                                 <ContextMenu.ItemTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding Name, Mode=OneWay}"/>
+                                        <TextBlock PreviewMouseDown="TextBlock_PreviewMouseDown" Text="{Binding RuleName, Mode=OneWay}"/>
                                     </DataTemplate>
                                 </ContextMenu.ItemTemplate>
                             </ContextMenu>
@@ -291,17 +283,6 @@
                                            RenderOptions.BitmapScalingMode="HighQuality"/>
                         </StackPanel>
                     </Button>
-
-                    <TextBlock Text="Preset" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10,0,10,0"/>
-
-                    <ComboBox Name = "PresetsList"  Height="20" MinWidth="100"   
-                              DropDownClosed="PresetsList_DropDownClosed">
-                        <ComboBox.ItemTemplate>
-                            <ItemContainerTemplate>
-                                <TextBlock Text="{Binding Name}" />
-                            </ItemContainerTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
 
                 </StackPanel>
             </Border>

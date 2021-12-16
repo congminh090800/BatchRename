@@ -1,0 +1,15 @@
+D:\BatchRename\TestApp\bin\Debug\TestApp.exe.config
+D:\BatchRename\TestApp\bin\Debug\TestApp.exe
+D:\BatchRename\TestApp\bin\Debug\TestApp.pdb
+D:\BatchRename\TestApp\obj\Debug\TestApp.csproj.AssemblyReference.cache
+D:\BatchRename\TestApp\obj\Debug\MainWindow.g.cs
+D:\BatchRename\TestApp\obj\Debug\App.g.cs
+D:\BatchRename\TestApp\obj\Debug\TestApp_MarkupCompile.cache
+D:\BatchRename\TestApp\obj\Debug\TestApp_MarkupCompile.lref
+D:\BatchRename\TestApp\obj\Debug\MainWindow.baml
+D:\BatchRename\TestApp\obj\Debug\TestApp.g.resources
+D:\BatchRename\TestApp\obj\Debug\TestApp.Properties.Resources.resources
+D:\BatchRename\TestApp\obj\Debug\TestApp.csproj.GenerateResource.cache
+D:\BatchRename\TestApp\obj\Debug\TestApp.csproj.CoreCompileInputs.cache
+D:\BatchRename\TestApp\obj\Debug\TestApp.exe
+D:\BatchRename\TestApp\obj\Debug\TestApp.pdb

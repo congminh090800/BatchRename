@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="ChangeExtensionDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="CompletedRenameDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -15,6 +18,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="ChangeExtensionDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="CompletedRenameDialog.xaml">
       <SubType>Designer</SubType>
     </Page>

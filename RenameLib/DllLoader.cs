@@ -18,7 +18,8 @@ namespace RenameLib
             foreach(FileInfo fileInfo in fis)
             {
                 var domain = AppDomain.CurrentDomain;
-                Assembly assembly = Assembly.LoadFile(fileInfo.FullName);
+                //AssemblyName assName = AssemblyName.GetAssemblyName(fileInfo.FullName);
+                Assembly assembly = Assembly.LoadFrom(fileInfo.FullName);
                 Type[] types = assembly.GetTypes();
 
                 foreach (var type in types)
