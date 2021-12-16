@@ -199,22 +199,54 @@ namespace BatchRename
 
         private void DownBottomButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var item = OperationsList.SelectedItem as PresetElement;
+            if (item != null)
+            {
+                CurrentPresetElements.Remove(item);
+                CurrentPresetElements.Add(item);
+                OperationsList.SelectedIndex = CurrentPresetElements.Count - 1;
+            }
         }
 
         private void DownButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var item = OperationsList.SelectedItem as PresetElement;
+            if (item != null)
+            {
+                int index = CurrentPresetElements.IndexOf(item);
+                if (index < CurrentPresetElements.Count - 1)
+                {
+                    CurrentPresetElements.RemoveAt(index);
+                    CurrentPresetElements.Insert(index + 1, item);
+                    OperationsList.SelectedIndex = index + 1;
+                }
+            }
         }
 
         private void UpTopButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var item = OperationsList.SelectedItem as PresetElement;
+            if (item != null)
+            {
+                CurrentPresetElements.Remove(item);
+                CurrentPresetElements.Insert(0, item);
+                OperationsList.SelectedIndex = 0;
+            }
         }
 
         private void UpButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var item = OperationsList.SelectedItem as PresetElement;
+            if (item != null)
+            {
+                int index = CurrentPresetElements.IndexOf(item);
+                if (index > 0)
+                {
+                    CurrentPresetElements.RemoveAt(index);
+                    CurrentPresetElements.Insert(index - 1, item);
+                    OperationsList.SelectedIndex = index - 1;
+                }
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
