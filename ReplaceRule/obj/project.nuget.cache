@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "4W9qt6WptXtxt56RRq38xd2wEd4fl7vAJdGKDvR28LKfWFAUzIeaIXfY0Bk256cZwLTRgTGLzFh0rkSyrKcyXw==",
+  "success": true,
+  "projectFilePath": "D:\\BatchRename\\ReplaceRule\\ReplaceRule.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dainghia\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

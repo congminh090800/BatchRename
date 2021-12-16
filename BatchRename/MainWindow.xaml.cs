@@ -231,6 +231,39 @@ namespace BatchRename
                     case "ChangeExtension":
                         openChangeExtDialog();
                         break;
+                    case "Counter":
+                        PresetElement counterElement = new PresetElement();
+                        counterElement.Name = "Counter";
+                        counterElement.Description = "Add counter to the end of the file";
+                        CurrentPresetElements.Add(counterElement);
+                        break;
+                    case "LowerCaseAndNoSpace":
+                        PresetElement lowerCaseAndNoSpacElement = new PresetElement();
+                        lowerCaseAndNoSpacElement.Name = "LowerCaseAndNoSpace";
+                        lowerCaseAndNoSpacElement.Description = "Convert all characters to lowercase, remove all spaces";
+                        CurrentPresetElements.Add(lowerCaseAndNoSpacElement);
+                        break;
+                    case "PascalCase":
+                        PresetElement pascalElement = new PresetElement();
+                        pascalElement.Name = "PascalCase";
+                        pascalElement.Description = "Convert filename to PascalCase";
+                        CurrentPresetElements.Add(pascalElement);
+                        break;
+                    case "Prefix":
+                        PresetElement prefixElement = new PresetElement();
+                        prefixElement.Name = "Prefix";
+                        prefixElement.Description = "Adding a prefix to all the files";
+                        CurrentPresetElements.Add(prefixElement);
+                        break;
+                    case "Replace":
+                        openReplaceDialog();
+                        break;
+                    case "Suffix":
+                        PresetElement suffixElement = new PresetElement();
+                        suffixElement.Name = "Suffix";
+                        suffixElement.Description = "Adding a suffix to all the files";
+                        CurrentPresetElements.Add(suffixElement);
+                        break;
                     default:
                         break;
                 }
@@ -240,6 +273,16 @@ namespace BatchRename
         {
             ChangeExtensionDialog window = new ChangeExtensionDialog();
             window.OnNewExtensionSubmit += (presetElement) =>
+            {
+                CurrentPresetElements.Add(presetElement);
+            };
+            window.Show();
+        }
+
+        public void openReplaceDialog()
+        {
+            ReplaceStringDialog window = new ReplaceStringDialog();
+            window.OnReplaceSubmit += (presetElement) =>
             {
                 CurrentPresetElements.Add(presetElement);
             };

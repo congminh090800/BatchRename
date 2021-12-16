@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "aRWI3+xwapYa4Sju/qRQ6CxdUXVyq5POU0siA9HJ9K0D+gKMwMQACwvMvskeE1Q5sdM6/INqRYzWNAP/Y4yfyw==",
+  "success": true,
+  "projectFilePath": "D:\\BatchRename\\ChangeExtensionRule\\ChangeExtensionRule.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dainghia\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

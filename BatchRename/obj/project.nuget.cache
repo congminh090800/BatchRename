@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "ea8/+4PjeopMWbf7YQr6oKQ2rDlWjDo5PobqLnMhVOSDrNfdJieNR1f8GSL+h3iGOpRfOEqvKSMy5CJdFGEkPw==",
+  "success": true,
+  "projectFilePath": "D:\\BatchRename\\BatchRename\\BatchRename.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dainghia\\.nuget\\packages\\fody\\6.5.1\\fody.6.5.1.nupkg.sha512",
+    "C:\\Users\\dainghia\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\dainghia\\.nuget\\packages\\propertychanged.fody\\3.4.0\\propertychanged.fody.3.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

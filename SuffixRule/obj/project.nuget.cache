@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "YkXdpsv7t6lXwd3RvxF4Y/3TEpw2Cr8imtWEwF4P5cJRSo4cDjtNEJVvACtCsYB8+ZcPiuqc7RC8+N0MJCDykw==",
+  "success": true,
+  "projectFilePath": "D:\\BatchRename\\SuffixRule\\SuffixRule.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dainghia\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

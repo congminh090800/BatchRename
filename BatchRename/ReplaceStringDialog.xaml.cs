@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,24 +20,28 @@ namespace BatchRename
     /// </summary>
     public partial class ReplaceStringDialog : Window
     {
-        public delegate void OptArgsDelegate(string From, string To);
-        public event OptArgsDelegate OptArgsChange = null;
+
+        public delegate void ReplaceCb(PresetElement presetElement);
+        public event ReplaceCb OnReplaceSubmit = null;
 
         public ReplaceStringDialog()
         {
             InitializeComponent();
-            FromTextBox.Text = "";
-            ToTextBox.Text = "";
         }
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            if (OptArgsChange != null)
+            PresetElement temp = new PresetElement();
+            temp.Name = "Replace";
+            temp.Params["From"] = FromTextBox.Text;
+            temp.Params["To"] = ToTextBox.Text;
+            temp.Description = PresetElement.ToPrettyString(temp.Params);
+            if (OnReplaceSubmit != null)
             {
-                OptArgsChange.Invoke(FromTextBox.Text, ToTextBox.Text);
+                OnReplaceSubmit(temp);
+                Close();
             }
-            DialogResult = true;
-            Close();
         }
     }
 }

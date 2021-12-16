@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Icon="Assets/app_configuration.png"
-        Title="Replace String configuration" Height="200" Width="330" ResizeMode="NoResize">
+        Title="Replace String option" Height="200" Width="330" ResizeMode="NoResize">
     <Canvas>
         <TextBlock Text="From" Canvas.Left="33" Canvas.Top="32"/>
 

@@ -66,9 +66,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\dainghia\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -76,16 +74,11 @@
       "projectUniqueName": "D:\\BatchRename\\SuffixRule\\SuffixRule.csproj",
       "projectName": "SuffixRule",
       "projectPath": "D:\\BatchRename\\SuffixRule\\SuffixRule.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\dainghia\\.nuget\\packages\\",
       "outputPath": "D:\\BatchRename\\SuffixRule\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\dainghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
