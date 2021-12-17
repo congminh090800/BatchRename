@@ -28,20 +28,24 @@ namespace BatchRename
         {
             InitializeComponent();
         }
-        public event PropertyChangedEventHandler PropertyChanged;
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             PresetElement temp = new PresetElement();
             temp.Name = "Replace";
-            temp.Params["From"] = FromTextBox.Text;
-            temp.Params["To"] = ToTextBox.Text;
+            temp.Params["regexPattern"] = FromTextBox.Text;
+            temp.Params["replacer"] = ToTextBox.Text;
             temp.Description = PresetElement.ToPrettyString(temp.Params);
             if (OnReplaceSubmit != null)
             {
                 OnReplaceSubmit(temp);
                 Close();
             }
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -7,6 +7,11 @@ namespace RenameLib
 {
     public class RenameInfo
     {
+        public RenameInfo()
+        {
+            OriginFiles = new List<FileInfo>();
+            OriginFolders = new List<DirectoryInfo>();
+        }
         public List<FileInfo> OriginFiles { get; set; }
         public List<DirectoryInfo> OriginFolders { get; set; }
         public string RegexPattern { get; set; }

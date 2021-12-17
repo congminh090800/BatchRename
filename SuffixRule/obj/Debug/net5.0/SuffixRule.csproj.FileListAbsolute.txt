@@ -1,0 +1,15 @@
+D:\BatchRename\SuffixRule\bin\Debug\net5.0\SuffixRule.deps.json
+D:\BatchRename\SuffixRule\bin\Debug\net5.0\SuffixRule.dll
+D:\BatchRename\SuffixRule\bin\Debug\net5.0\ref\SuffixRule.dll
+D:\BatchRename\SuffixRule\bin\Debug\net5.0\SuffixRule.pdb
+D:\BatchRename\SuffixRule\bin\Debug\net5.0\RenameLib.dll
+D:\BatchRename\SuffixRule\bin\Debug\net5.0\RenameLib.pdb
+D:\BatchRename\SuffixRule\obj\Debug\net5.0\SuffixRule.csproj.AssemblyReference.cache
+D:\BatchRename\SuffixRule\obj\Debug\net5.0\SuffixRule.GeneratedMSBuildEditorConfig.editorconfig
+D:\BatchRename\SuffixRule\obj\Debug\net5.0\SuffixRule.AssemblyInfoInputs.cache
+D:\BatchRename\SuffixRule\obj\Debug\net5.0\SuffixRule.AssemblyInfo.cs
+D:\BatchRename\SuffixRule\obj\Debug\net5.0\SuffixRule.csproj.CoreCompileInputs.cache
+D:\BatchRename\SuffixRule\obj\Debug\net5.0\SuffixRule.csproj.CopyComplete
+D:\BatchRename\SuffixRule\obj\Debug\net5.0\SuffixRule.dll
+D:\BatchRename\SuffixRule\obj\Debug\net5.0\ref\SuffixRule.dll
+D:\BatchRename\SuffixRule\obj\Debug\net5.0\SuffixRule.pdb

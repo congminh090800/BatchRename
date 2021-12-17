@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 D:\BatchRename\BatchRename\App.xaml
-4-198266211
+7-663197429
 
-12-1016713026
+15-353369153
 205-343859496
-ChangeExtensionDialog.xaml;CompletedRenameDialog.xaml;MainWindow.xaml;ReplaceStringDialog.xaml;
+ChangeExtensionDialog.xaml;CompletedRenameDialog.xaml;MainWindow.xaml;PascalCaseDialog.xaml;PrefixDialog.xaml;ReplaceStringDialog.xaml;SuffixDialog.xaml;
 
 False
 

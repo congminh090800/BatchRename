@@ -1,0 +1,15 @@
+D:\BatchRename\PrefixRule\bin\Debug\net5.0\PrefixRule.deps.json
+D:\BatchRename\PrefixRule\bin\Debug\net5.0\PrefixRule.dll
+D:\BatchRename\PrefixRule\bin\Debug\net5.0\ref\PrefixRule.dll
+D:\BatchRename\PrefixRule\bin\Debug\net5.0\PrefixRule.pdb
+D:\BatchRename\PrefixRule\bin\Debug\net5.0\RenameLib.dll
+D:\BatchRename\PrefixRule\bin\Debug\net5.0\RenameLib.pdb
+D:\BatchRename\PrefixRule\obj\Debug\net5.0\PrefixRule.csproj.AssemblyReference.cache
+D:\BatchRename\PrefixRule\obj\Debug\net5.0\PrefixRule.GeneratedMSBuildEditorConfig.editorconfig
+D:\BatchRename\PrefixRule\obj\Debug\net5.0\PrefixRule.AssemblyInfoInputs.cache
+D:\BatchRename\PrefixRule\obj\Debug\net5.0\PrefixRule.AssemblyInfo.cs
+D:\BatchRename\PrefixRule\obj\Debug\net5.0\PrefixRule.csproj.CoreCompileInputs.cache
+D:\BatchRename\PrefixRule\obj\Debug\net5.0\PrefixRule.csproj.CopyComplete
+D:\BatchRename\PrefixRule\obj\Debug\net5.0\PrefixRule.dll
+D:\BatchRename\PrefixRule\obj\Debug\net5.0\ref\PrefixRule.dll
+D:\BatchRename\PrefixRule\obj\Debug\net5.0\PrefixRule.pdb

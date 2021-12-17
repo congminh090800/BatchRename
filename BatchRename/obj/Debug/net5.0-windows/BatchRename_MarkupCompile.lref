@@ -3,5 +3,8 @@
 FD:\BatchRename\BatchRename\ChangeExtensionDialog.xaml;;
 FD:\BatchRename\BatchRename\CompletedRenameDialog.xaml;;
 FD:\BatchRename\BatchRename\MainWindow.xaml;;
+FD:\BatchRename\BatchRename\PascalCaseDialog.xaml;;
+FD:\BatchRename\BatchRename\PrefixDialog.xaml;;
 FD:\BatchRename\BatchRename\ReplaceStringDialog.xaml;;
+FD:\BatchRename\BatchRename\SuffixDialog.xaml;;
 

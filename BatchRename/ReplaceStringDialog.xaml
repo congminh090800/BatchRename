@@ -23,7 +23,7 @@
             >Save
         </Button>
 
-        <Button Name="CancelButton" Canvas.Left="191" Canvas.Top="107" Width="75" Height="28" IsCancel="True"
+        <Button Name="CancelButton" Click="CancelButton_Click" Canvas.Left="191" Canvas.Top="107" Width="75" Height="28" IsCancel="True"
             >Cancel
         </Button>
     </Canvas>

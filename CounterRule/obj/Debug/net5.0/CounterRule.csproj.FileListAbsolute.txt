@@ -1,0 +1,15 @@
+D:\BatchRename\CounterRule\bin\Debug\net5.0\CounterRule.deps.json
+D:\BatchRename\CounterRule\bin\Debug\net5.0\CounterRule.dll
+D:\BatchRename\CounterRule\bin\Debug\net5.0\ref\CounterRule.dll
+D:\BatchRename\CounterRule\bin\Debug\net5.0\CounterRule.pdb
+D:\BatchRename\CounterRule\bin\Debug\net5.0\RenameLib.dll
+D:\BatchRename\CounterRule\bin\Debug\net5.0\RenameLib.pdb
+D:\BatchRename\CounterRule\obj\Debug\net5.0\CounterRule.csproj.AssemblyReference.cache
+D:\BatchRename\CounterRule\obj\Debug\net5.0\CounterRule.GeneratedMSBuildEditorConfig.editorconfig
+D:\BatchRename\CounterRule\obj\Debug\net5.0\CounterRule.AssemblyInfoInputs.cache
+D:\BatchRename\CounterRule\obj\Debug\net5.0\CounterRule.AssemblyInfo.cs
+D:\BatchRename\CounterRule\obj\Debug\net5.0\CounterRule.csproj.CoreCompileInputs.cache
+D:\BatchRename\CounterRule\obj\Debug\net5.0\CounterRule.csproj.CopyComplete
+D:\BatchRename\CounterRule\obj\Debug\net5.0\CounterRule.dll
+D:\BatchRename\CounterRule\obj\Debug\net5.0\ref\CounterRule.dll
+D:\BatchRename\CounterRule\obj\Debug\net5.0\CounterRule.pdb

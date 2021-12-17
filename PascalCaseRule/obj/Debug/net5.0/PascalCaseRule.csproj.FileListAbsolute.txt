@@ -1,0 +1,15 @@
+D:\BatchRename\PascalCaseRule\bin\Debug\net5.0\PascalCaseRule.deps.json
+D:\BatchRename\PascalCaseRule\bin\Debug\net5.0\PascalCaseRule.dll
+D:\BatchRename\PascalCaseRule\bin\Debug\net5.0\ref\PascalCaseRule.dll
+D:\BatchRename\PascalCaseRule\bin\Debug\net5.0\PascalCaseRule.pdb
+D:\BatchRename\PascalCaseRule\bin\Debug\net5.0\RenameLib.dll
+D:\BatchRename\PascalCaseRule\bin\Debug\net5.0\RenameLib.pdb
+D:\BatchRename\PascalCaseRule\obj\Debug\net5.0\PascalCaseRule.csproj.AssemblyReference.cache
+D:\BatchRename\PascalCaseRule\obj\Debug\net5.0\PascalCaseRule.GeneratedMSBuildEditorConfig.editorconfig
+D:\BatchRename\PascalCaseRule\obj\Debug\net5.0\PascalCaseRule.AssemblyInfoInputs.cache
+D:\BatchRename\PascalCaseRule\obj\Debug\net5.0\PascalCaseRule.AssemblyInfo.cs
+D:\BatchRename\PascalCaseRule\obj\Debug\net5.0\PascalCaseRule.csproj.CoreCompileInputs.cache
+D:\BatchRename\PascalCaseRule\obj\Debug\net5.0\PascalCaseRule.csproj.CopyComplete
+D:\BatchRename\PascalCaseRule\obj\Debug\net5.0\PascalCaseRule.dll
+D:\BatchRename\PascalCaseRule\obj\Debug\net5.0\ref\PascalCaseRule.dll
+D:\BatchRename\PascalCaseRule\obj\Debug\net5.0\PascalCaseRule.pdb

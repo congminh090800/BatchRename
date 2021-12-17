@@ -29,6 +29,7 @@ namespace BatchRename
 
         private BackgroundWorker fetchFilesWorker;
         private BackgroundWorker removeFilesWorker;
+        private RenameInfo renameInfo;
         public MainWindow()
         {
             DllLoader.execute();
@@ -36,6 +37,8 @@ namespace BatchRename
             InitializeComponent();
             AddMethodButton.ContextMenu.ItemsSource = Rules;
             OperationsList.ItemsSource = CurrentPresetElements;
+
+            renameInfo = new RenameInfo();
 
             filesList = new BindingList<FileInfo>();
 
@@ -151,12 +154,13 @@ namespace BatchRename
             }
         }
 
-        private void RefreshButton_Click(object sender, RoutedEventArgs e)
+        private void refresh()
         {
             Mouse.OverrideCursor = System.Windows.Input.Cursors.Wait;
             LoadingBar.Value = 0;
             LoadingOutput.Text = "";
             Mouse.OverrideCursor = null;
+            filesList.Clear();
         }
 
         private void AddMethodButton_Click(object sender, RoutedEventArgs e)
@@ -174,9 +178,45 @@ namespace BatchRename
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
+            List<FileInfo> fileInfos = new List<FileInfo>();
+            foreach (FileInfo file in filesList)
+            {
+                fileInfos.Add(file);
+            }
+            renameInfo.OriginFiles = fileInfos;
+            
+            for(int i = 0; i < CurrentPresetElements.Count; i++)
+            {
+                PresetElement element = CurrentPresetElements.ElementAt(i);
+                IRule rule = DllLoader.Rules.Find(plugin => plugin.RuleName == element.Name);
+                switch (rule.RuleName) 
+                {
+                    case "ChangeExtension":
+                        renameInfo.NewExtension = element.Params["newExtension"];
+                        break;
+                    case "PascalCase":
+                        renameInfo.PascalCaseSeperator = element.Params["pascalCaseSeperator"];
+                        break;
+                    case "Prefix":
+                        renameInfo.Prefix = element.Params["prefix"];
+                        break;
+                    case "Replace":
+                        renameInfo.RegexPattern = element.Params["regexPattern"];
+                        renameInfo.Replacer = element.Params["replacer"];
+                        break;
+                    case "Suffix":
+                        renameInfo.Suffix = element.Params["suffix"];
+                        break;
+                    default:
+                        break;
+                }
+
+                rule.apply(renameInfo);
+            }
+
             CompletedRenameDialog notiDialog = new CompletedRenameDialog();
             notiDialog.ShowDialog();
-            RefreshButton_Click(sender, e);
+            refresh();
         }
 
         private void OpenButton_Click(object sender, RoutedEventArgs e)
@@ -328,7 +368,10 @@ namespace BatchRename
             {
                 TextBlock tb = e.Source as TextBlock;
                 string ruleName = tb.Text;
-                switch(ruleName)
+                if (CurrentPresetElements.Any(e => e.Name.Equals(ruleName))){
+                    return;
+                }
+                    switch (ruleName)
                 {
                     case "ChangeExtension":
                         openChangeExtDialog();
@@ -346,25 +389,16 @@ namespace BatchRename
                         CurrentPresetElements.Add(lowerCaseAndNoSpacElement);
                         break;
                     case "PascalCase":
-                        PresetElement pascalElement = new PresetElement();
-                        pascalElement.Name = "PascalCase";
-                        pascalElement.Description = "Convert filename to PascalCase";
-                        CurrentPresetElements.Add(pascalElement);
+                        openPascalCaseDialog();
                         break;
                     case "Prefix":
-                        PresetElement prefixElement = new PresetElement();
-                        prefixElement.Name = "Prefix";
-                        prefixElement.Description = "Adding a prefix to all the files";
-                        CurrentPresetElements.Add(prefixElement);
+                        openPrefixDialog();
                         break;
                     case "Replace":
                         openReplaceDialog();
                         break;
                     case "Suffix":
-                        PresetElement suffixElement = new PresetElement();
-                        suffixElement.Name = "Suffix";
-                        suffixElement.Description = "Adding a suffix to all the files";
-                        CurrentPresetElements.Add(suffixElement);
+                        openSuffixDialog();
                         break;
                     default:
                         break;
@@ -385,6 +419,36 @@ namespace BatchRename
         {
             ReplaceStringDialog window = new ReplaceStringDialog();
             window.OnReplaceSubmit += (presetElement) =>
+            {
+                CurrentPresetElements.Add(presetElement);
+            };
+            window.Show();
+        }
+
+        public void openPascalCaseDialog()
+        {
+            PascalCaseDialog window = new PascalCaseDialog();
+            window.OnSeperatorSubmit += (presetElement) =>
+            {
+                CurrentPresetElements.Add(presetElement);
+            };
+            window.Show();
+        }
+
+        public void openPrefixDialog()
+        {
+            PrefixDialog window = new PrefixDialog();
+            window.OnPrefixSubmit += (presetElement) =>
+            {
+                CurrentPresetElements.Add(presetElement);
+            };
+            window.Show();
+        }
+
+        public void openSuffixDialog()
+        {
+            SuffixDialog window = new SuffixDialog();
+            window.OnSuffixSubmit += (presetElement) =>
             {
                 CurrentPresetElements.Add(presetElement);
             };
