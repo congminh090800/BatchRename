@@ -18,15 +18,17 @@ namespace BatchRename
     /// <summary>
     /// Interaction logic for ReplaceStringDialog.xaml
     /// </summary>
-    public partial class ReplaceStringDialog : Window
+    public partial class ReplaceStringDialog : Window, INotifyPropertyChanged
     {
-
+        public string Replacer { get; set; }
         public delegate void ReplaceCb(PresetElement presetElement);
         public event ReplaceCb OnReplaceSubmit = null;
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public ReplaceStringDialog()
         {
             InitializeComponent();
+            DataContext = this;
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -34,7 +36,7 @@ namespace BatchRename
             PresetElement temp = new PresetElement();
             temp.Name = "Replace";
             temp.Params["regexPattern"] = FromTextBox.Text;
-            temp.Params["replacer"] = ToTextBox.Text;
+            temp.Params["replacer"] = Replacer;
             temp.Description = PresetElement.ToPrettyString(temp.Params);
             if (OnReplaceSubmit != null)
             {
@@ -46,6 +48,11 @@ namespace BatchRename
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            SaveButton.IsEnabled = Validation.GetHasError(tb) == true ? false : true;
         }
     }
 }

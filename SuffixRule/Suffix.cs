@@ -13,7 +13,7 @@ namespace SuffixRule
         {
             try
             {
-                if (renameInfo.Suffix.IndexOfAny(Path.GetInvalidFileNameChars()) != -1)
+                if (renameInfo.Suffix.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
                 {
                     throw new Exception($"Prefix must not contain invalid characters");
                 }

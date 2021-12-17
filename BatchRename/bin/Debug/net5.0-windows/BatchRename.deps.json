@@ -8,8 +8,16 @@
     ".NETCoreApp,Version=v5.0": {
       "BatchRename/1.0.0": {
         "dependencies": {
+          "ChangeExtensionRule": "1.0.0",
+          "CounterRule": "1.0.0",
+          "LowerCaseAndNoSpaceRule": "1.0.0",
+          "PascalCaseRule": "1.0.0",
+          "PrefixRule": "1.0.0",
           "PropertyChanged.Fody": "3.4.0",
-          "RenameLib": "1.0.0"
+          "RenameLib": "1.0.0",
+          "ReplaceRule": "1.0.0",
+          "SuffixRule": "1.0.0",
+          "TrimRule": "1.0.0"
         },
         "runtime": {
           "BatchRename.dll": {}
@@ -35,12 +43,76 @@
           }
         }
       },
+      "ChangeExtensionRule/1.0.0": {
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "runtime": {
+          "ChangeExtensionRule.dll": {}
+        }
+      },
+      "CounterRule/1.0.0": {
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "runtime": {
+          "CounterRule.dll": {}
+        }
+      },
+      "LowerCaseAndNoSpaceRule/1.0.0": {
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "runtime": {
+          "LowerCaseAndNoSpaceRule.dll": {}
+        }
+      },
+      "PascalCaseRule/1.0.0": {
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "runtime": {
+          "PascalCaseRule.dll": {}
+        }
+      },
+      "PrefixRule/1.0.0": {
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "runtime": {
+          "PrefixRule.dll": {}
+        }
+      },
       "RenameLib/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
           "RenameLib.dll": {}
+        }
+      },
+      "ReplaceRule/1.0.0": {
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "runtime": {
+          "ReplaceRule.dll": {}
+        }
+      },
+      "SuffixRule/1.0.0": {
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "runtime": {
+          "SuffixRule.dll": {}
+        }
+      },
+      "TrimRule/1.0.0": {
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "runtime": {
+          "TrimRule.dll": {}
         }
       }
     }
@@ -72,7 +144,47 @@
       "path": "propertychanged.fody/3.4.0",
       "hashPath": "propertychanged.fody.3.4.0.nupkg.sha512"
     },
+    "ChangeExtensionRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CounterRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LowerCaseAndNoSpaceRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PascalCaseRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PrefixRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "RenameLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ReplaceRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SuffixRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TrimRule/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

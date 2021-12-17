@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,10 +18,13 @@ namespace BatchRename
     /// <summary>
     /// Interaction logic for PrefixDialog.xaml
     /// </summary>
-    public partial class PrefixDialog : Window
+    public partial class PrefixDialog : Window, INotifyPropertyChanged
     {
+        public string Prefix { get; set; }
         public delegate void PrefixCb(PresetElement presetElement);
         public event PrefixCb OnPrefixSubmit = null;
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public PrefixDialog()
         {
             InitializeComponent();
@@ -31,7 +35,7 @@ namespace BatchRename
         {
             PresetElement temp = new PresetElement();
             temp.Name = "Prefix";
-            temp.Params["prefix"] = TextBox.Text;
+            temp.Params["prefix"] = Prefix;
             temp.Description = PresetElement.ToPrettyString(temp.Params);
             if (OnPrefixSubmit != null)
             {

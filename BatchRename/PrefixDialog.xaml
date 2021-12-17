@@ -31,7 +31,10 @@
         <TextBox TextChanged="TextBox_TextChanged" Name ="TextBox" Validation.ErrorTemplate="{StaticResource validationTemplate}" Style="{StaticResource textBoxInError}" Canvas.Left="124" Canvas.Top="27" Width="189">
             <TextBox.Text>
                 <Binding Path="Prefix" UpdateSourceTrigger="PropertyChanged">
-
+                    <Binding.ValidationRules>
+                        <local:ValidCharacter />
+                        <local:Required />
+                    </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
         </TextBox>

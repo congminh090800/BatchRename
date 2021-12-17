@@ -29,7 +29,14 @@
         </TextBlock>
 
         <TextBox TextChanged="TextBox_TextChanged" Name ="TextBox" Validation.ErrorTemplate="{StaticResource validationTemplate}" Style="{StaticResource textBoxInError}" Canvas.Left="124" Canvas.Top="27" Width="189">
-           
+            <TextBox.Text>
+                <Binding Path="Suffix" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:ValidCharacter />
+                        <local:Required />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
         </TextBox>
 
         <Button Name="SaveButton" Click="SaveButton_Click" Canvas.Left="68" Canvas.Top="90" Width="75" Height="28" IsEnabled="False" 

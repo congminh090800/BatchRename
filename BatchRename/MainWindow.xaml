@@ -214,15 +214,9 @@
 
                         <Button.ContextMenu>
                             <ContextMenu HorizontalAlignment="Center">
-                                <!--<ContextMenu.ItemContainerStyle>
-                                    <Style TargetType="{x:Type MenuItem}">
-                                        <Setter Property="Command"  
-                                       Value="{Binding CreateNewOperation}" />
-                                    </Style>
-                                </ContextMenu.ItemContainerStyle>-->
                                 <ContextMenu.ItemTemplate>
                                     <DataTemplate>
-                                        <TextBlock PreviewMouseDown="TextBlock_PreviewMouseDown" Text="{Binding RuleName, Mode=OneWay}"/>
+                                        <MenuItem Click="MethodMenuItem_Click" Header="{Binding RuleName, Mode=OneWay}"/>
                                     </DataTemplate>
                                 </ContextMenu.ItemTemplate>
                             </ContextMenu>
@@ -320,11 +314,6 @@
             </ListView>
 
         </DockPanel>
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="10,3">
-            <TextBlock Text="Output: " FontWeight="Bold"/>
-            <TextBlock Name="LoadingOutput" TextTrimming="CharacterEllipsis"/>
-        </StackPanel>
-        <ProgressBar Name="LoadingBar" DockPanel.Dock="Top" Height="10" Margin="20,5,20,5" Foreground="#bdd2ff"/>
         <TabControl Name="RenameTabControl" BorderBrush="LightGray" BorderThickness="1,1,0,0" SelectionChanged="RenameTabControl_SelectionChanged">
             <TabItem Style="{DynamicResource DefaultTab}" FocusVisualStyle="{x:Null}" Header="Rename Files">
                 <DockPanel LastChildFill="True">
@@ -336,6 +325,15 @@
                                             Width="15" Height="15" Margin="5"
                                             RenderOptions.BitmapScalingMode="HighQuality"/>
                                     <TextBlock Text="Add" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button Name="AddFolderButton" Click="AddFolderButton_Click" Focusable="False" Style="{DynamicResource DefaultButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="Assets/appbar_add.png" 
+                                            Width="15" Height="15" Margin="5"
+                                            RenderOptions.BitmapScalingMode="HighQuality"/>
+                                    <TextBlock Text="Add Folder" VerticalAlignment="Center" Margin="0,0,10,0"/>
                                 </StackPanel>
                             </Button>
 

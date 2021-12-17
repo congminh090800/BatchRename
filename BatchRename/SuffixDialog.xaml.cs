@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,10 +18,13 @@ namespace BatchRename
     /// <summary>
     /// Interaction logic for SuffixDialog.xaml
     /// </summary>
-    public partial class SuffixDialog : Window
+    public partial class SuffixDialog : Window, INotifyPropertyChanged
     {
+        public string Suffix { get; set; }
         public delegate void SuffixCb(PresetElement presetElement);
         public event SuffixCb OnSuffixSubmit = null;
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public SuffixDialog()
         {
             InitializeComponent();
@@ -31,7 +35,7 @@ namespace BatchRename
         {
             PresetElement temp = new PresetElement();
             temp.Name = "Suffix";
-            temp.Params["suffix"] = TextBox.Text;
+            temp.Params["suffix"] = Suffix;
             temp.Description = PresetElement.ToPrettyString(temp.Params);
             if (OnSuffixSubmit != null)
             {

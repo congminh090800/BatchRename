@@ -48,7 +48,6 @@ namespace BatchRename
                 WorkerSupportsCancellation = true
             };
             fetchFilesWorker.DoWork += FetchFiles_DoWork;
-            fetchFilesWorker.ProgressChanged += ProgressChanged;
             fetchFilesWorker.RunWorkerCompleted += RunWorkerCompleted;
 
             //Create exclude files worker to invoke on click
@@ -58,7 +57,6 @@ namespace BatchRename
                 WorkerSupportsCancellation = true,
             };
             removeFilesWorker.DoWork += RemoveFiles_DoWork;
-            removeFilesWorker.ProgressChanged += ProgressChanged;
             removeFilesWorker.RunWorkerCompleted += RunWorkerCompleted;
 
             RenameFilesList.ItemsSource = filesList;
@@ -80,26 +78,15 @@ namespace BatchRename
 
         private void RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            LoadingBar.Value = 100;
             Mouse.OverrideCursor = null;
-            LoadingOutput.Text = "Action completed";
 
             EnableLoadingViews();
-        }
-
-        private void ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            LoadingBar.Value = e.ProgressPercentage;
-            if (e.UserState != null)
-                LoadingOutput.Text = (string)e.UserState;
         }
 
         private void FetchFiles_DoWork(object sender, DoWorkEventArgs e)
         {
             string path = (string)e.Argument + "\\";
             var children = Directory.GetFiles(path);
-            StringBuilder output = new StringBuilder();
-
             for (int child = 0; child < children.Length; child++)
             {
                 bool isDuplicated = false;
@@ -108,29 +95,21 @@ namespace BatchRename
                 //Check duplicates
                 for (int i = 0; i < filesList.Count; i++)
                 {
-                    if (filesList[i].Name.Equals(childName) && filesList[i].FullName.Equals(path))
+                    if (filesList[i].FullName.Equals(children[child]))
                     {
                         isDuplicated = true;
                         break;
                     }
                 }
 
-                output.Clear();
-                string result = "Skip duplicate ";
                 if (!isDuplicated)
                 {
-                    result = "Add ";
                     Dispatcher.Invoke(() =>
                     {
                         FileInfo file = new FileInfo(children[child]);
                         filesList.Add(file);
                     });
                 }
-                output.Append(result);
-                output.Append(path);
-                output.Append(childName);
-
-                fetchFilesWorker.ReportProgress(child * 100 / children.Length, output.ToString());
             }
         }
 
@@ -147,18 +126,12 @@ namespace BatchRename
                 Dispatcher.Invoke(() => {
                     filesList.Remove(items[item]);
                 });
-                output.Clear();
-                output.Append("Remove ");
-                output.Append(items[item].FullName + items[item].Name);
-                removeFilesWorker.ReportProgress(item * 100 / amount, output.ToString());
             }
         }
 
         private void refresh()
         {
             Mouse.OverrideCursor = System.Windows.Input.Cursors.Wait;
-            LoadingBar.Value = 0;
-            LoadingOutput.Text = "";
             Mouse.OverrideCursor = null;
             filesList.Clear();
         }
@@ -183,35 +156,37 @@ namespace BatchRename
             {
                 fileInfos.Add(file);
             }
-            renameInfo.OriginFiles = fileInfos;
             
             for(int i = 0; i < CurrentPresetElements.Count; i++)
             {
                 PresetElement element = CurrentPresetElements.ElementAt(i);
                 IRule rule = DllLoader.Rules.Find(plugin => plugin.RuleName == element.Name);
+                RenameInfo tempInfo = new RenameInfo();
+                tempInfo.OriginFiles = fileInfos;
                 switch (rule.RuleName) 
                 {
                     case "ChangeExtension":
-                        renameInfo.NewExtension = element.Params["newExtension"];
+                        tempInfo.NewExtension = element.Params["newExtension"];
                         break;
                     case "PascalCase":
-                        renameInfo.PascalCaseSeperator = element.Params["pascalCaseSeperator"];
+                        tempInfo.PascalCaseSeperator = element.Params["pascalCaseSeperator"];
                         break;
                     case "Prefix":
-                        renameInfo.Prefix = element.Params["prefix"];
+                        tempInfo.Prefix = element.Params["prefix"];
                         break;
                     case "Replace":
-                        renameInfo.RegexPattern = element.Params["regexPattern"];
-                        renameInfo.Replacer = element.Params["replacer"];
+                        tempInfo.RegexPattern = element.Params["regexPattern"];
+                        tempInfo.Replacer = element.Params["replacer"];
                         break;
                     case "Suffix":
-                        renameInfo.Suffix = element.Params["suffix"];
+                        tempInfo.Suffix = element.Params["suffix"];
                         break;
                     default:
                         break;
                 }
 
-                rule.apply(renameInfo);
+                rule.apply(tempInfo);
+                fileInfos = tempInfo.OriginFiles;
             }
 
             CompletedRenameDialog notiDialog = new CompletedRenameDialog();
@@ -257,6 +232,19 @@ namespace BatchRename
 
         private void AddFileButton_Click(object sender, RoutedEventArgs e)
         {
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            openFileDialog.Title = "Choose files";
+            openFileDialog.RestoreDirectory = true;
+            if (openFileDialog.ShowDialog() == true)
+            {
+                FileInfo file = new FileInfo(openFileDialog.FileName);
+                if (filesList.Any(e => e.FullName.Equals(file.FullName))) return;
+                filesList.Add(file);
+            };
+        }
+
+        private void AddFolderButton_Click(object sender, RoutedEventArgs e)
+        {
             if (fetchFilesWorker.IsBusy || removeFilesWorker.IsBusy) return;
             var dialog = new FolderBrowserDialog();
 
@@ -265,8 +253,6 @@ namespace BatchRename
                 Mouse.OverrideCursor = System.Windows.Input.Cursors.Wait;
 
                 DisableLoadingViews();
-                LoadingBar.Value = 0;
-                Debug.WriteLine("path: " + dialog.SelectedPath);
                 fetchFilesWorker.RunWorkerAsync(dialog.SelectedPath);
             }
         }
@@ -277,7 +263,6 @@ namespace BatchRename
             Mouse.OverrideCursor = System.Windows.Input.Cursors.Wait;
 
             DisableLoadingViews();
-            LoadingBar.Value = 0;
             removeFilesWorker.RunWorkerAsync(RenameFilesList.SelectedItems);
         }
 
@@ -368,47 +353,48 @@ namespace BatchRename
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
         }
-        private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        private void MethodMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            if (sender is TextBlock)
+            MenuItem tb = sender as MenuItem;
+            string ruleName = tb.Header.ToString();
+            Trace.WriteLine("name: " + ruleName);
+            switch (ruleName)
             {
-                TextBlock tb = e.Source as TextBlock;
-                string ruleName = tb.Text;
-                if (CurrentPresetElements.Any(e => e.Name.Equals(ruleName))){
-                    return;
-                }
-                    switch (ruleName)
-                {
-                    case "ChangeExtension":
-                        openChangeExtDialog();
-                        break;
-                    case "Counter":
-                        PresetElement counterElement = new PresetElement();
-                        counterElement.Name = "Counter";
-                        counterElement.Description = "Add counter to the end of the file";
-                        CurrentPresetElements.Add(counterElement);
-                        break;
-                    case "LowerCaseAndNoSpace":
-                        PresetElement lowerCaseAndNoSpacElement = new PresetElement();
-                        lowerCaseAndNoSpacElement.Name = "LowerCaseAndNoSpace";
-                        lowerCaseAndNoSpacElement.Description = "Convert all characters to lowercase, remove all spaces";
-                        CurrentPresetElements.Add(lowerCaseAndNoSpacElement);
-                        break;
-                    case "PascalCase":
-                        openPascalCaseDialog();
-                        break;
-                    case "Prefix":
-                        openPrefixDialog();
-                        break;
-                    case "Replace":
-                        openReplaceDialog();
-                        break;
-                    case "Suffix":
-                        openSuffixDialog();
-                        break;
-                    default:
-                        break;
-                }
+                case "ChangeExtension":
+                    openChangeExtDialog();
+                    break;
+                case "Counter":
+                    PresetElement counterElement = new PresetElement();
+                    counterElement.Name = "Counter";
+                    counterElement.Description = "Add counter to the end of the file";
+                    CurrentPresetElements.Add(counterElement);
+                    break;
+                case "LowerCaseAndNoSpace":
+                    PresetElement lowerCaseAndNoSpacElement = new PresetElement();
+                    lowerCaseAndNoSpacElement.Name = "LowerCaseAndNoSpace";
+                    lowerCaseAndNoSpacElement.Description = "Convert all characters to lowercase, remove all spaces";
+                    CurrentPresetElements.Add(lowerCaseAndNoSpacElement);
+                    break;
+                case "PascalCase":
+                    openPascalCaseDialog();
+                    break;
+                case "Prefix":
+                    openPrefixDialog();
+                    break;
+                case "Replace":
+                    openReplaceDialog();
+                    break;
+                case "Suffix":
+                    openSuffixDialog();
+                    break;
+                case "Trim":
+                    PresetElement trimElement = new PresetElement();
+                    trimElement.Name = "Trim";
+                    trimElement.Description = "Remove all spaces at head and tail";
+                    CurrentPresetElements.Add(trimElement);
+                    break;
+                default:
+                    break;
             }
         }
         public void openChangeExtDialog()

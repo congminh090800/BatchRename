@@ -20,7 +20,7 @@ namespace ReplaceRule
                 {
                     throw new Exception($"Must not exceed 255 characters: {fi.Name}");
                 }
-                if (nameAfterReplace.IndexOfAny(Path.GetInvalidFileNameChars()) != -1)
+                if (nameAfterReplace.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
                 {
                     throw new Exception($"Must not contain invalid characters: {fi.Name}");
                 }
