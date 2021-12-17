@@ -339,7 +339,7 @@
                                 </StackPanel>
                             </Button>
 
-                            <Button Name="ExcludeFileButton" Click="ExcludeFileButton_Click" Focusable="False" Style="{DynamicResource DefaultButton}">
+                            <Button Name="RemoveFileButton" Click="RemoveFileButton_Click" Focusable="False" Style="{DynamicResource DefaultButton}">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="Assets/appbar_exclude.png" 
                                             Width="15" Height="15" Margin="5"

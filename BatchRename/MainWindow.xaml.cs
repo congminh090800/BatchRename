@@ -67,14 +67,14 @@ namespace BatchRename
         private void DisableLoadingViews()
         {
             AddFileButton.IsEnabled = false;
-            ExcludeFileButton.IsEnabled = false;
+            RemoveFileButton.IsEnabled = false;
             StartButton.IsEnabled = false;
         }
 
         private void EnableLoadingViews()
         {
             AddFileButton.IsEnabled = true;
-            ExcludeFileButton.IsEnabled = true;
+            RemoveFileButton.IsEnabled = true;
             StartButton.IsEnabled = true;
         }
 
@@ -271,8 +271,14 @@ namespace BatchRename
             }
         }
 
-        private void ExcludeFileButton_Click(object sender, RoutedEventArgs e)
+        private void RemoveFileButton_Click(object sender, RoutedEventArgs e)
         {
+            if (fetchFilesWorker.IsBusy || removeFilesWorker.IsBusy || filesList.Count <= 0) return;
+            Mouse.OverrideCursor = System.Windows.Input.Cursors.Wait;
+
+            DisableLoadingViews();
+            LoadingBar.Value = 0;
+            removeFilesWorker.RunWorkerAsync(RenameFilesList.SelectedItems);
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
