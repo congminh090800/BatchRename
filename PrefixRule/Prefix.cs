@@ -12,7 +12,7 @@ namespace PrefixRule
         {
             try
             {
-                if (renameInfo.Prefix.IndexOfAny(Path.GetInvalidFileNameChars()) != -1)
+                if (renameInfo.Prefix.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
                 {
                     throw new Exception($"Prefix must not contain invalid characters");
                 }

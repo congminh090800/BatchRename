@@ -15,7 +15,7 @@ namespace TrimRule
             {
                 foreach (FileInfo fi in renameInfo.OriginFiles)
                 {
-                    if (fi.Name.IndexOfAny(Path.GetInvalidFileNameChars()) != -1)
+                    if (fi.Name.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
                     {
                         throw new Exception($"Must not contain invalid characters: {fi.Name}");
                     }

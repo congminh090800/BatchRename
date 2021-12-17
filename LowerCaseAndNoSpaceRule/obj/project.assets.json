@@ -66,7 +66,9 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dainghia\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
@@ -74,11 +76,16 @@
       "projectUniqueName": "D:\\BatchRename\\LowerCaseAndNoSpaceRule\\LowerCaseAndNoSpaceRule.csproj",
       "projectName": "LowerCaseAndNoSpaceRule",
       "projectPath": "D:\\BatchRename\\LowerCaseAndNoSpaceRule\\LowerCaseAndNoSpaceRule.csproj",
-      "packagesPath": "C:\\Users\\dainghia\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
       "outputPath": "D:\\BatchRename\\LowerCaseAndNoSpaceRule\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\dainghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

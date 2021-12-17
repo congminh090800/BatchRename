@@ -8,6 +8,22 @@
         WindowStartupLocation="CenterScreen"
         Icon="Assets/app_configuration.png"
         Title="Replace String option" Height="200" Width="330" ResizeMode="NoResize">
+    <Window.Resources>
+        <ControlTemplate x:Key="validationTemplate">
+            <StackPanel Orientation="Horizontal">
+                <AdornedElementPlaceholder></AdornedElementPlaceholder>
+                <TextBlock Foreground="Red" FontSize="20" Text=" !"></TextBlock>
+            </StackPanel>
+        </ControlTemplate>
+        <Style x:Key="textBoxInError" TargetType="{x:Type TextBox}">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="True">
+                    <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=(Validation.Errors)[0].ErrorContent}"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
     <Canvas>
         <TextBlock Text="From" Canvas.Left="33" Canvas.Top="32"/>
 
@@ -17,7 +33,16 @@
 
         </TextBlock>
 
-        <TextBox Name ="ToTextBox" Canvas.Left="75" Canvas.Top="65" Width="189"></TextBox>
+        <TextBox TextChanged="TextBox_TextChanged" Name ="ToTextBox" Canvas.Left="75" Canvas.Top="65" Width="189" Validation.ErrorTemplate="{StaticResource validationTemplate}" Style="{StaticResource textBoxInError}" >
+            <TextBox.Text>
+                <Binding Path="Replacer" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:ValidCharacter />
+                        <local:Required />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
 
         <Button Name="SaveButton" Click="SaveButton_Click" Canvas.Left="76" Canvas.Top="107" Width="75" Height="28" 
             >Save
