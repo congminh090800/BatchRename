@@ -32,7 +32,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ChangeExtensionRule\ChangeExtensionRule.csproj" />
+    <ProjectReference Include="..\CounterRule\CounterRule.csproj" />
+    <ProjectReference Include="..\LowerCaseAndNoSpaceRule\LowerCaseAndNoSpaceRule.csproj" />
+    <ProjectReference Include="..\PascalCaseRule\PascalCaseRule.csproj" />
+    <ProjectReference Include="..\PrefixRule\PrefixRule.csproj" />
     <ProjectReference Include="..\RenameLib\RenameLib.csproj" />
+    <ProjectReference Include="..\ReplaceRule\ReplaceRule.csproj" />
+    <ProjectReference Include="..\SuffixRule\SuffixRule.csproj" />
+    <ProjectReference Include="..\TrimRule\TrimRule.csproj" />
   </ItemGroup>
 
   <ItemGroup>

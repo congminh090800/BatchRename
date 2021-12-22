@@ -1,0 +1,193 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "BatchRename/1.0.0": {
+        "dependencies": {
+          "ChangeExtensionRule": "1.0.0",
+          "CounterRule": "1.0.0",
+          "LowerCaseAndNoSpaceRule": "1.0.0",
+          "PascalCaseRule": "1.0.0",
+          "PrefixRule": "1.0.0",
+          "PropertyChanged.Fody": "3.4.0",
+          "RenameLib": "1.0.0",
+          "ReplaceRule": "1.0.0",
+          "SuffixRule": "1.0.0",
+          "TrimRule": "1.0.0"
+        },
+        "runtime": {
+          "BatchRename.dll": {}
+        }
+      },
+      "Fody/6.5.1": {},
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
+          }
+        }
+      },
+      "PropertyChanged.Fody/3.4.0": {
+        "dependencies": {
+          "Fody": "6.5.1"
+        },
+        "runtime": {
+          "lib/netstandard2.1/PropertyChanged.dll": {
+            "assemblyVersion": "3.4.0.0",
+            "fileVersion": "3.4.0.0"
+          }
+        }
+      },
+      "ChangeExtensionRule/1.0.0": {
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "runtime": {
+          "ChangeExtensionRule.dll": {}
+        }
+      },
+      "CounterRule/1.0.0": {
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "runtime": {
+          "CounterRule.dll": {}
+        }
+      },
+      "LowerCaseAndNoSpaceRule/1.0.0": {
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "runtime": {
+          "LowerCaseAndNoSpaceRule.dll": {}
+        }
+      },
+      "PascalCaseRule/1.0.0": {
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "runtime": {
+          "PascalCaseRule.dll": {}
+        }
+      },
+      "PrefixRule/1.0.0": {
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "runtime": {
+          "PrefixRule.dll": {}
+        }
+      },
+      "RenameLib/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "RenameLib.dll": {}
+        }
+      },
+      "ReplaceRule/1.0.0": {
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "runtime": {
+          "ReplaceRule.dll": {}
+        }
+      },
+      "SuffixRule/1.0.0": {
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "runtime": {
+          "SuffixRule.dll": {}
+        }
+      },
+      "TrimRule/1.0.0": {
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "runtime": {
+          "TrimRule.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BatchRename/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Fody/6.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DEw9rPG5vrpaK4vPPze0f4q6Zd0mfzjGNKy49nrmINkftIHpkyf8KH+uC/qF8y6v1askPWu9NbJS9bkmN5wXaA==",
+      "path": "fody/6.5.1",
+      "hashPath": "fody.6.5.1.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
+    },
+    "PropertyChanged.Fody/3.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IAZyq0uolKo2WYm4mjx+q7A8fSGFT0x2e1s3y+ODn4JI0kqTDoo9GF2tdaypUzRFJZfdMxfC5HZW9QzdJLtOnA==",
+      "path": "propertychanged.fody/3.4.0",
+      "hashPath": "propertychanged.fody.3.4.0.nupkg.sha512"
+    },
+    "ChangeExtensionRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CounterRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LowerCaseAndNoSpaceRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PascalCaseRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PrefixRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RenameLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ReplaceRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SuffixRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TrimRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

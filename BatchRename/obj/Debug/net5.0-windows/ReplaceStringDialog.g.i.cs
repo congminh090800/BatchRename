@@ -86,7 +86,7 @@ namespace BatchRename {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BatchRename;component/replacestringdialog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BatchRename;V1.0.0.0;component/replacestringdialog.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ReplaceStringDialog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

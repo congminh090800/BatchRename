@@ -32,6 +32,71 @@
           "build/PropertyChanged.Fody.props": {}
         }
       },
+      "ChangeExtensionRule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ChangeExtensionRule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ChangeExtensionRule.dll": {}
+        }
+      },
+      "CounterRule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CounterRule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CounterRule.dll": {}
+        }
+      },
+      "LowerCaseAndNoSpaceRule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LowerCaseAndNoSpaceRule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LowerCaseAndNoSpaceRule.dll": {}
+        }
+      },
+      "PascalCaseRule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PascalCaseRule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PascalCaseRule.dll": {}
+        }
+      },
+      "PrefixRule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PrefixRule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PrefixRule.dll": {}
+        }
+      },
       "RenameLib/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -43,6 +108,45 @@
         },
         "runtime": {
           "bin/placeholder/RenameLib.dll": {}
+        }
+      },
+      "ReplaceRule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ReplaceRule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReplaceRule.dll": {}
+        }
+      },
+      "SuffixRule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SuffixRule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SuffixRule.dll": {}
+        }
+      },
+      "TrimRule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RenameLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TrimRule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TrimRule.dll": {}
         }
       }
     }
@@ -130,16 +234,64 @@
         "weaver/PropertyChanged.Fody.xcf"
       ]
     },
+    "ChangeExtensionRule/1.0.0": {
+      "type": "project",
+      "path": "../ChangeExtensionRule/ChangeExtensionRule.csproj",
+      "msbuildProject": "../ChangeExtensionRule/ChangeExtensionRule.csproj"
+    },
+    "CounterRule/1.0.0": {
+      "type": "project",
+      "path": "../CounterRule/CounterRule.csproj",
+      "msbuildProject": "../CounterRule/CounterRule.csproj"
+    },
+    "LowerCaseAndNoSpaceRule/1.0.0": {
+      "type": "project",
+      "path": "../LowerCaseAndNoSpaceRule/LowerCaseAndNoSpaceRule.csproj",
+      "msbuildProject": "../LowerCaseAndNoSpaceRule/LowerCaseAndNoSpaceRule.csproj"
+    },
+    "PascalCaseRule/1.0.0": {
+      "type": "project",
+      "path": "../PascalCaseRule/PascalCaseRule.csproj",
+      "msbuildProject": "../PascalCaseRule/PascalCaseRule.csproj"
+    },
+    "PrefixRule/1.0.0": {
+      "type": "project",
+      "path": "../PrefixRule/PrefixRule.csproj",
+      "msbuildProject": "../PrefixRule/PrefixRule.csproj"
+    },
     "RenameLib/1.0.0": {
       "type": "project",
       "path": "../RenameLib/RenameLib.csproj",
       "msbuildProject": "../RenameLib/RenameLib.csproj"
+    },
+    "ReplaceRule/1.0.0": {
+      "type": "project",
+      "path": "../ReplaceRule/ReplaceRule.csproj",
+      "msbuildProject": "../ReplaceRule/ReplaceRule.csproj"
+    },
+    "SuffixRule/1.0.0": {
+      "type": "project",
+      "path": "../SuffixRule/SuffixRule.csproj",
+      "msbuildProject": "../SuffixRule/SuffixRule.csproj"
+    },
+    "TrimRule/1.0.0": {
+      "type": "project",
+      "path": "../TrimRule/TrimRule.csproj",
+      "msbuildProject": "../TrimRule/TrimRule.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
+      "ChangeExtensionRule >= 1.0.0",
+      "CounterRule >= 1.0.0",
+      "LowerCaseAndNoSpaceRule >= 1.0.0",
+      "PascalCaseRule >= 1.0.0",
+      "PrefixRule >= 1.0.0",
       "PropertyChanged.Fody >= 3.4.0",
-      "RenameLib >= 1.0.0"
+      "RenameLib >= 1.0.0",
+      "ReplaceRule >= 1.0.0",
+      "SuffixRule >= 1.0.0",
+      "TrimRule >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -176,8 +328,32 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
+            "D:\\BatchRename\\ChangeExtensionRule\\ChangeExtensionRule.csproj": {
+              "projectPath": "D:\\BatchRename\\ChangeExtensionRule\\ChangeExtensionRule.csproj"
+            },
+            "D:\\BatchRename\\CounterRule\\CounterRule.csproj": {
+              "projectPath": "D:\\BatchRename\\CounterRule\\CounterRule.csproj"
+            },
+            "D:\\BatchRename\\LowerCaseAndNoSpaceRule\\LowerCaseAndNoSpaceRule.csproj": {
+              "projectPath": "D:\\BatchRename\\LowerCaseAndNoSpaceRule\\LowerCaseAndNoSpaceRule.csproj"
+            },
+            "D:\\BatchRename\\PascalCaseRule\\PascalCaseRule.csproj": {
+              "projectPath": "D:\\BatchRename\\PascalCaseRule\\PascalCaseRule.csproj"
+            },
+            "D:\\BatchRename\\PrefixRule\\PrefixRule.csproj": {
+              "projectPath": "D:\\BatchRename\\PrefixRule\\PrefixRule.csproj"
+            },
             "D:\\BatchRename\\RenameLib\\RenameLib.csproj": {
               "projectPath": "D:\\BatchRename\\RenameLib\\RenameLib.csproj"
+            },
+            "D:\\BatchRename\\ReplaceRule\\ReplaceRule.csproj": {
+              "projectPath": "D:\\BatchRename\\ReplaceRule\\ReplaceRule.csproj"
+            },
+            "D:\\BatchRename\\SuffixRule\\SuffixRule.csproj": {
+              "projectPath": "D:\\BatchRename\\SuffixRule\\SuffixRule.csproj"
+            },
+            "D:\\BatchRename\\TrimRule\\TrimRule.csproj": {
+              "projectPath": "D:\\BatchRename\\TrimRule\\TrimRule.csproj"
             }
           }
         }

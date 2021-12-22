@@ -78,7 +78,7 @@ namespace BatchRename {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BatchRename;component/suffixdialog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BatchRename;V1.0.0.0;component/suffixdialog.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\SuffixDialog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
